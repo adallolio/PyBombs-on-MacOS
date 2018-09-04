@@ -33,7 +33,11 @@ The method presented here has been tested on macOS High Sierra Version 10.13.5.
   ```
   bash build.sh
   ```
-  * Check and copy your local hostname in System Preferences -> Sharing -> Edit and run:
+  * Check and copy your local hostname in System Preferences -> Sharing -> Edit and add it:
+  ```
+  xhost + your-local-hostname
+  ```
+  * Run a container:
   ```
   docker run --rm -it -e DISPLAY=your-local-hostname:0 --privileged --name $BASE_NAME $BASE_CONTAINER bash
   ```
