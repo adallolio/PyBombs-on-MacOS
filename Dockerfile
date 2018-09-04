@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y \
     cmake \
     xdot \
     python \
+    python-pip \
+    python-apt \
     doxygen \
     git \
     tig \
@@ -18,5 +20,13 @@ RUN apt-get update && apt-get install -y \
     nano \
     gcc \
     g++
+
+RUN git clone https://github.com/gnuradio/pybombs.git && \
+    cd pybombs && \
+    python setup.py install && \
+    pybombs auto-config && \
+    pybombs recipes add-defaults && \
+    mkdir gnuradio && \
+    pybombs prefix init -a default gnuradio/default/ -R gnuradio-default
 
 CMD ["bash"]
