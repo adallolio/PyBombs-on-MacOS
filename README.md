@@ -37,4 +37,9 @@ The method presented here has been tested on macOS High Sierra Version 10.13.5.
   ```
   docker run --rm -it -e DISPLAY=your-local-hostname:0 --privileged --name $BASE_NAME $BASE_CONTAINER bash
   ```
+  * Install pybombs and gnuradio:
+  ```
+  bash install.sh
+  ```
+  
   * Enjoy the new environment!
